@@ -1,0 +1,20 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class SceneController : MonoBehaviour
+{
+    public void LoadLivingRoomScene()
+    {
+        SceneManager.LoadScene("LivingRoomScene");
+    }
+
+    public void LoadFloorPlanScene()
+    {
+        SceneManager.LoadScene("FloorPlanScene");
+    }
+
+    public void LoadModelShowcaseScene()
+    {
+        SceneManager.LoadScene("ModelShowcaseScene");
+    }
+}
