@@ -3,18 +3,36 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    public void LoadLivingRoomScene()
+    public void OnButtonClicked(string buttonName)
     {
-        SceneManager.LoadScene("LivingRoomScene");
+        switch (buttonName)
+        {
+            case "Button-1":
+                SceneManager.LoadScene("SCENE-001");
+                break;
+            case "Button-2":
+                SceneManager.LoadScene("SCENE-002");
+                break;
+            case "Button-3":
+                SceneManager.LoadScene("SCENE-003");
+                break;
+            case "Button-4":
+                SceneManager.LoadScene("SCENE-004");
+                break;
+            case "Button-5":
+                SceneManager.LoadScene("SCENE-005");
+                break;
+            default:
+                Debug.LogWarning("Unknown button clicked: " + buttonName);
+                break;
+        }
     }
-
-    public void LoadFloorPlanScene()
+    void Update()
     {
-        SceneManager.LoadScene("FloorPlanScene");
+        if (Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().name != "MASTER SCENE")
+        {
+            SceneManager.LoadScene("MASTER SCENE");
+        }
     }
-
-    public void LoadModelShowcaseScene()
-    {
-        SceneManager.LoadScene("ModelShowcaseScene");
-    }
+    
 }
